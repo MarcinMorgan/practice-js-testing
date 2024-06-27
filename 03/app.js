@@ -1,3 +1,5 @@
 export default function randomNumber(min, max) {
-    return Math.random() * (max - min) + min;
+    if(typeof(min) === 'number' && typeof(max) === 'number' && min <= max) {
+        return Math.random() * (max - min) + min;
+    };
 }
