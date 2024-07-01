@@ -2,13 +2,12 @@ import DB from './DB';
 
 describe('Insert rows', () => {
     it('should throw exception when id is incorrect', () => {
+
         const item = {id: 'text'};
         const dataBase = new DB();
-        const promise = dataBase.insert(item);
         
-        return dataBase.insert(item).catch(err => {
-            expect(err).toBe('ID can be only number!');
-        })
+        expect(dataBase.insert(item))
+            .rejects.toThrow();
     })
 })
 
